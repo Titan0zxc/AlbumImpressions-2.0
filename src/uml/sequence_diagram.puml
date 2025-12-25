@@ -1,0 +1,11 @@
+@startuml
+actor Пользователь
+Пользователь -> Controller: нажимает "Следующий"
+Controller -> SlideIterator: hasNext()
+SlideIterator --> Controller: true
+Controller -> SlideIterator: next()
+SlideIterator --> Controller: Slide
+Controller -> ImageView: добавить на сцену
+Controller -> FadeTransition: play()
+Controller -> Timeline: play() (движение)
+@enduml

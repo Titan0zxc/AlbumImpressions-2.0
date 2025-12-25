@@ -1,0 +1,20 @@
+@startuml
+class AlbumApp
+class Controller
+class Slide {
+  -imageView : ImageView
+  +getImageView() : ImageView
+}
+class SlideIterator {
+  -slides : List<Slide>
+  -position : int
+  +hasNext() : boolean
+  +next() : Slide
+  +reset()
+}
+
+AlbumApp --> Controller
+Controller --> SlideIterator
+Controller --> Slide
+SlideIterator --> Slide
+@enduml
