@@ -1,4 +1,4 @@
-package com.example;
+package com.example.albumimpressions;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -12,12 +12,16 @@ public class AlbumApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         List<Slide> slides = new ArrayList<>();
-        slides.add(new Slide("/image1.png"));
-        slides.add(new Slide("/image2.png"));
-        slides.add(new Slide("/image3.png"));
-        slides.add(new Slide("/image4.png"));
-        slides.add(new Slide("/image5.png"));
-        // Добавьте остальные до image9.jpeg по желанию
+        slides.add(new Slide("/image1.jpg"));
+        slides.add(new Slide("/image2.jpg"));
+        slides.add(new Slide("/image3.jpg"));
+        slides.add(new Slide("/image4.jpg"));
+        slides.add(new Slide("/image5.jpg"));
+        slides.add(new Slide("/image6.jpg"));
+        slides.add(new Slide("/image7.jpg"));
+        slides.add(new Slide("/image8.jpg"));
+        slides.add(new Slide("/image9.jpg"));
+
 
         Controller controller = new Controller(slides);
 
