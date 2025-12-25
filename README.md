@@ -2,7 +2,6 @@
 ----------------
 > **Dark Edition** | Итератор + Анимация в JavaFX  
 ![Java](https://img.icons8.com/color/64/000000/java-coffee-cup-logo.png) 
-![JavaFX](https://img.icons8.com/color/64/000000/javafx.png) 
 ![Git](https://img.icons8.com/color/64/000000/git.png)
 
 **Описание**:  
