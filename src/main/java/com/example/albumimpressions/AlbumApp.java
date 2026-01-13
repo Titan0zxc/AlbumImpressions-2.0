@@ -5,35 +5,33 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AlbumApp extends Application {
+
     @Override
-    public void start(Stage primaryStage) {
-        List<Slide> slides = new ArrayList<>();
-        slides.add(new Slide("/image1.jpg"));
-        slides.add(new Slide("/image2.jpg"));
-        slides.add(new Slide("/image3.jpg"));
-        slides.add(new Slide("/image4.jpg"));
-        slides.add(new Slide("/image5.jpg"));
-        slides.add(new Slide("/image6.jpg"));
-        slides.add(new Slide("/image7.jpg"));
-        slides.add(new Slide("/image8.jpg"));
-        slides.add(new Slide("/image9.jpg"));
+    public void start(Stage stage) {
+        SlideCollection collection = new SlideCollection(9);
 
+        collection.addSlide(new Slide("/image1.jpg"));
+        collection.addSlide(new Slide("/image2.jpg"));
+        collection.addSlide(new Slide("/image3.jpg"));
+        collection.addSlide(new Slide("/image4.jpg"));
+        collection.addSlide(new Slide("/image5.jpg"));
+        collection.addSlide(new Slide("/image6.jpg"));
+        collection.addSlide(new Slide("/image7.jpg"));
+        collection.addSlide(new Slide("/image8.jpg"));
+        collection.addSlide(new Slide("/image9.jpg"));
 
-        Controller controller = new Controller(slides);
+        Controller controller = new Controller(collection);
 
         StackPane root = controller.createUI();
         Scene scene = new Scene(root, 900, 700);
 
-        primaryStage.setTitle("Альбом впечатлений");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setTitle("Альбом впечатлений");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        launch(args);
+        launch();
     }
 }

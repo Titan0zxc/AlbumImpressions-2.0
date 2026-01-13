@@ -1,20 +1,31 @@
 @startuml
-class AlbumApp
-class Controller
 class Slide {
-  -imageView : ImageView
-  +getImageView() : ImageView
-}
-class SlideIterator {
-  -slides : List<Slide>
-  -position : int
-  +hasNext() : boolean
-  +next() : Slide
-  +reset()
+  - imageView : ImageView
+  + getImageView()
 }
 
-AlbumApp --> Controller
-Controller --> SlideIterator
-Controller --> Slide
-SlideIterator --> Slide
+class SlideCollection {
+  - slides : Slide[]
+  - size : int
+  + addSlide(slide)
+  + getSize()
+  + getSlide(index)
+  + createIterator()
+}
+
+class SlideIterator {
+  - position : int
+  - collection : SlideCollection
+  + hasNext()
+  + next()
+  + reset()
+}
+
+class Controller
+class AlbumApp
+
+SlideCollection "1" o-- "*" Slide
+SlideCollection --> SlideIterator : creates
+Controller --> SlideIterator : uses
+AlbumApp --> SlideCollection : creates
 @enduml

@@ -1,22 +1,21 @@
 package com.example.albumimpressions;
 
-import java.util.List;
-
 public class SlideIterator {
-    private final List<Slide> slides;
+
+    private final SlideCollection collection;
     private int position = 0;
 
-    public SlideIterator(List<Slide> slides) {
-        this.slides = slides;
+    public SlideIterator(SlideCollection collection) {
+        this.collection = collection;
     }
 
     public boolean hasNext() {
-        return position < slides.size();
+        return position < collection.getSize();
     }
 
     public Slide next() {
         if (hasNext()) {
-            return slides.get(position++);
+            return collection.getSlide(position++);
         }
         return null;
     }

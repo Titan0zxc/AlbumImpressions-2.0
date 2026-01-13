@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Slide {
+
     private final ImageView imageView;
 
     public Slide(String path) {
